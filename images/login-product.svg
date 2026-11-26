@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 820" role="img" aria-label="Coven streetwear product image placeholder">
+  <defs>
+    <linearGradient id="loginBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E9D5CC" />
+      <stop offset="100%" stop-color="#FAF3EA" />
+    </linearGradient>
+    <linearGradient id="garmentShade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6E263B" />
+      <stop offset="100%" stop-color="#241419" />
+    </linearGradient>
+  </defs>
+
+  <!-- Soft Blush-to-Ivory Editorial Backdrop -->
+  <rect width="720" height="820" fill="url(#loginBg)" />
+
+  <!-- Decorative Curved Corner Accents matching the draft sketch -->
+  <path d="M0 165 C95 160, 155 95, 165 0" fill="none" stroke="#6E263B" stroke-opacity="0.32" stroke-width="2" />
+  <path d="M720 165 C625 160, 565 95, 555 0" fill="none" stroke="#6E263B" stroke-opacity="0.32" stroke-width="2" />
+  <path d="M0 125 C72 120, 118 72, 125 0" fill="#B64D61" fill-opacity="0.12" />
+  <path d="M720 125 C648 120, 602 72, 595 0" fill="#B64D61" fill-opacity="0.12" />
+
+  <!-- Minimalist Editorial Frame -->
+  <rect x="64" y="64" width="592" height="692" rx="6" fill="none" stroke="#241419" stroke-opacity="0.14" stroke-width="1.5" />
+
+  <!-- Stylized Heavyweight Hoodie Product Silhouette -->
+  <g transform="translate(360 390)">
+    <ellipse cx="0" cy="210" rx="145" ry="18" fill="#241419" fill-opacity="0.12" />
+    <!-- Sleeves & Body -->
+    <path d="M-92 -145 L-175 -75 L-145 78 L-96 68 L-105 -15 L-96 182 L96 182 L105 -15 L96 68 L145 78 L175 -75 L92 -145 Z" fill="url(#garmentShade)" />
+    <!-- Hood -->
+    <path d="M-64 -145 C-55 -208, 55 -208, 64 -145 C42 -118, -42 -118, -64 -145 Z" fill="#241419" />
+    <path d="M-44 -144 C-34 -184, 34 -184, 44 -144 C26 -126, -26 -126, -44 -144 Z" fill="#6E263B" fill-opacity="0.55" />
+    <!-- Kangaroo Pocket -->
+    <path d="M-58 76 L58 76 L70 142 L-70 142 Z" fill="#241419" fill-opacity="0.35" stroke="#E9D5CC" stroke-opacity="0.2" stroke-width="1.2" />
+    <!-- Chest Wordmark -->
+    <text x="0" y="-22" text-anchor="middle" fill="#FAF3EA" font-family="Playfair Display, Georgia, serif" font-size="34" font-weight="700" letter-spacing="-0.5">coven.</text>
+    <line x1="-28" y1="-6" x2="28" y2="-6" stroke="#B64D61" stroke-width="2" />
+  </g>
+
+  <!-- Replaceable Placeholder Caption -->
+  <text x="360" y="692" text-anchor="middle" fill="#6E263B" font-family="DM Sans, Arial, sans-serif" font-size="13" font-weight="600" letter-spacing="3.5">PRODUCT IMAGE</text>
+  <text x="360" y="720" text-anchor="middle" fill="#241419" fill-opacity="0.55" font-family="DM Sans, Arial, sans-serif" font-size="11" letter-spacing="1.5">Replace images/login-product.svg with your product photo</text>
+</svg>
