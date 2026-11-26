@@ -1,0 +1,426 @@
+/* ==========================================================================
+   Coven Streetwear — Shared Design System (Palette, Header & Footer)
+   ========================================================================== */
+
+:root {
+  --color-dark-wine: #241419;
+  --color-cherry: #6E263B;
+  --color-rose-red: #B64D61;
+  --color-blush-cream: #E9D5CC;
+  --color-ivory: #FAF3EA;
+
+  --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --max-width: 1240px;
+  --transition-fast: 0.2s ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-ivory);
+  color: var(--color-dark-wine);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header ul,
+.site-footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-header button {
+  font-family: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+/* Visible focus outlines for keyboard accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--color-cherry);
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   Top Navigation Bar
+   ========================================================================== */
+
+.site-header {
+  background-color: var(--color-blush-cream);
+  color: var(--color-dark-wine);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(36, 20, 25, 0.08);
+}
+
+.header-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.brand-logo {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--color-dark-wine);
+  flex-shrink: 0;
+}
+
+.primary-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.site-header .nav-list {
+  display: flex;
+  align-items: center;
+  gap: 2.75rem;
+}
+
+.site-header .nav-item {
+  position: relative;
+}
+
+.site-header .nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-dark-wine);
+  padding: 0.35rem 0;
+  border-bottom: 2px solid transparent;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.site-header .nav-link:hover {
+  color: var(--color-cherry);
+}
+
+.site-header .nav-link.active {
+  border-bottom-color: var(--color-cherry);
+}
+
+.site-header .chevron-icon {
+  transition: transform var(--transition-fast);
+}
+
+.site-header .nav-dropdown.open .chevron-icon {
+  transform: rotate(180deg);
+}
+
+.site-header .dropdown-menu {
+  position: absolute;
+  top: calc(100% + 0.65rem);
+  left: 0;
+  min-width: 195px;
+  background-color: var(--color-ivory);
+  border: 1px solid rgba(36, 20, 25, 0.14);
+  box-shadow: 0 10px 24px rgba(36, 20, 25, 0.1);
+  padding: 0.5rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity var(--transition-fast), transform var(--transition-fast), visibility var(--transition-fast);
+  z-index: 120;
+}
+
+.site-header .nav-dropdown:hover .dropdown-menu,
+.site-header .nav-dropdown:focus-within .dropdown-menu,
+.site-header .nav-dropdown.open .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.site-header .dropdown-link {
+  display: block;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.85rem;
+  color: var(--color-dark-wine);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.site-header .dropdown-link:hover {
+  background-color: var(--color-blush-cream);
+  color: var(--color-cherry);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-shrink: 0;
+}
+
+.action-divider {
+  width: 1px;
+  height: 22px;
+  background-color: rgba(110, 38, 59, 0.45);
+  margin-right: 0.25rem;
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+  color: var(--color-dark-wine);
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.icon-btn:hover {
+  color: var(--color-cherry);
+}
+
+.cart-btn {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -5px;
+  right: -7px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background-color: var(--color-cherry);
+  color: var(--color-ivory);
+  font-size: 0.7rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* Search Panel */
+.search-panel {
+  background-color: var(--color-ivory);
+  border-top: 1px solid rgba(36, 20, 25, 0.1);
+  padding: 0.85rem 2rem;
+}
+
+.search-form {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid rgba(36, 20, 25, 0.25);
+  background-color: #ffffff;
+  color: var(--color-dark-wine);
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+.search-submit {
+  padding: 0.6rem 1.25rem;
+  background-color: var(--color-dark-wine);
+  color: var(--color-ivory);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  transition: background-color var(--transition-fast);
+}
+
+.search-submit:hover {
+  background-color: var(--color-cherry);
+}
+
+/* Mobile Menu Button */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  padding: 0.35rem;
+}
+
+.hamburger-line {
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-dark-wine);
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+/* ==========================================================================
+   Bottom Footer Bar
+   ========================================================================== */
+
+.site-footer {
+  margin-top: auto;
+  background-color: var(--color-dark-wine);
+  color: var(--color-ivory);
+}
+
+.footer-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.8rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-logo {
+  font-family: var(--font-serif);
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--color-ivory);
+}
+
+.footer-links,
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+}
+
+.footer-link {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-ivory);
+  transition: color var(--transition-fast);
+}
+
+.footer-link:hover {
+  color: var(--color-blush-cream);
+}
+
+.follow-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-rose-red);
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+@media (max-width: 860px) {
+  .header-container {
+    padding: 1rem 1.25rem;
+    flex-wrap: wrap;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+    order: 2;
+  }
+
+  .header-actions {
+    order: 1;
+    margin-left: auto;
+    gap: 0.9rem;
+  }
+
+  .action-divider {
+    display: none;
+  }
+
+  .primary-nav {
+    order: 3;
+    flex-basis: 100%;
+    display: none;
+    justify-content: flex-start;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(36, 20, 25, 0.12);
+  }
+
+  .primary-nav.is-open {
+    display: flex;
+  }
+
+  .site-header .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+    width: 100%;
+  }
+
+  .site-header .dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    border-left: 2px solid var(--color-cherry);
+    background-color: transparent;
+    padding: 0.25rem 0 0.25rem 0.75rem;
+    margin-top: 0.35rem;
+    display: none;
+  }
+
+  .site-header .nav-dropdown.open .dropdown-menu {
+    display: block;
+  }
+
+  .footer-container {
+    padding: 1.75rem 1.25rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .footer-links,
+  .footer-social {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+}
