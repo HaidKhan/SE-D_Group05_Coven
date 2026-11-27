@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/login.css">
+  <link rel="stylesheet" href="../css/auth.css">
 </head>
 <body>
   <!-- Shared Top Navigation Bar -->
@@ -107,29 +107,29 @@
   </header>
 
   <!-- Main Content -->
-  <main class="login-main">
-    <section class="login-split" aria-labelledby="loginHeading">
+  <main class="auth-main">
+    <section class="auth-split" aria-labelledby="loginHeading">
       <!-- Left Side: Product Image (replace src or overwrite images/login-product.svg later) -->
-      <div class="login-media-panel">
-        <div class="login-image-frame">
+      <div class="auth-media-panel">
+        <div class="auth-image-frame">
           <img
             id="loginProductImage"
             src="../images/login-product.svg"
             alt="Coven streetwear featured product image"
-            class="login-product-image"
+            class="auth-product-image"
           >
         </div>
       </div>
 
       <!-- Right Side: Login Form -->
-      <div class="login-form-panel">
-        <div class="login-card">
-          <header class="login-header">
-            <h1 id="loginHeading" class="login-title">Welcome back!</h1>
-            <p class="login-subtitle">Login to continue shopping</p>
+      <div class="auth-form-panel">
+        <div class="auth-card">
+          <header class="auth-header">
+            <h1 id="loginHeading" class="auth-title">Welcome back!</h1>
+            <p class="auth-subtitle">Login to continue shopping</p>
           </header>
 
-          <form class="login-form" id="loginForm" action="#" method="post" novalidate>
+          <form class="auth-form" id="loginForm" action="#" method="post" novalidate>
             <div class="input-group">
               <label for="loginEmail" class="sr-only">Email Address</label>
               <span class="input-icon" aria-hidden="true">
@@ -142,7 +142,7 @@
                 type="email"
                 id="loginEmail"
                 name="email"
-                class="login-input"
+                class="auth-input"
                 placeholder="Email Address"
                 autocomplete="email"
                 required
@@ -161,15 +161,15 @@
                 type="password"
                 id="loginPassword"
                 name="password"
-                class="login-input"
+                class="auth-input"
                 placeholder="Password"
                 autocomplete="current-password"
                 required
               >
               <button
                 type="button"
-                id="passwordToggleBtn"
                 class="password-toggle"
+                data-password-toggle="loginPassword"
                 aria-label="Show password"
                 aria-pressed="false"
               >
@@ -180,13 +180,13 @@
               </button>
             </div>
 
-            <p class="login-status" id="loginStatus" role="status" aria-live="polite"></p>
+            <p class="auth-status" id="loginStatus" role="status" aria-live="polite"></p>
 
-            <button type="submit" class="login-submit-btn">Login</button>
+            <button type="submit" class="auth-submit-btn">Login</button>
           </form>
 
-          <p class="signup-prompt">
-            Don't have an account? <a href="signup.html" class="signup-link">Sign up</a>
+          <p class="auth-switch-prompt">
+            Don't have an account? <a href="signup.html" class="auth-switch-link">Sign up</a>
           </p>
         </div>
       </div>
@@ -212,6 +212,6 @@
   </footer>
 
   <script src="../js/main.js"></script>
-  <script src="../js/login.js"></script>
+  <script src="../js/auth.js"></script>
 </body>
 </html>
