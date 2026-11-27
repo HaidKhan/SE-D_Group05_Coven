@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initShopDropdown();
   initSearchToggle();
   syncCartBadge();
+  // Re-sync badge whenever cart-store.js fires a cartchange event
+  window.addEventListener("cartchange", syncCartBadge);
 });
 
 function initMobileMenu() {
@@ -66,7 +68,7 @@ function syncCartBadge() {
   if (!badge) return;
 
   try {
-    const rawCart = localStorage.getItem("coven_cart");
+    const rawCart = localStorage.getItem("covenCart");
     if (!rawCart) {
       badge.textContent = "0";
       return;

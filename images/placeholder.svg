@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" fill="none">
+  <!-- Background: brand blush-cream -->
+  <rect width="400" height="500" fill="#E9D5CC"/>
+  <!-- Soft image-frame box -->
+  <rect x="120" y="150" width="160" height="160" rx="6" fill="#C9AFA4" opacity="0.55"/>
+  <!-- Mountain / landscape icon -->
+  <polygon points="200,195 240,255 160,255" fill="#9E7A70" opacity="0.5"/>
+  <polygon points="165,255 220,205 275,255" fill="#B09080" opacity="0.45"/>
+  <!-- Sun circle -->
+  <circle cx="162" cy="192" r="14" fill="#C88A70" opacity="0.5"/>
+  <!-- Label -->
+  <text
+    x="200" y="365"
+    text-anchor="middle"
+    font-family="'DM Sans', sans-serif"
+    font-size="13"
+    font-weight="600"
+    letter-spacing="3"
+    fill="#8A6560"
+    opacity="0.75"
+  >NO IMAGE</text>
+</svg>
