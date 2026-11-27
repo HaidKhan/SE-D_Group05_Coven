@@ -15,21 +15,6 @@
    ========================================================================== */
 
 /* ------------------------------------------------------------------
-   TEMPORARY: seed the cart for testing
-   Remove or comment this block once product pages are built and
-   shoppers can add items themselves.
-   ------------------------------------------------------------------ */
-(function seedCartForTesting() {
-  if (getCart().length === 0) {
-    addToCart("men-shadow-hoodie",          "M",        1);
-    addToCart("women-boxy-hoodie",          "S",        1);
-    addToCart("accessoriesmen-belt-bag",    "One size", 1);
-    addToCart("accessorieswomen-woven-scarf","One size", 1);
-    addToCart("sneakers-high-court",        42,         1);
-  }
-})();
-
-/* ------------------------------------------------------------------
    DOM references — grabbed once at startup
    ------------------------------------------------------------------ */
 var cartItemsList        = document.getElementById("cartItemsList");
