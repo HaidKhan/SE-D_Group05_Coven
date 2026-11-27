@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shop the COVEN Sneakers Collection — architectural streetwear footwear in Pakistan with PKR pricing, size selection, filtering, and instant cart updates.">
+  <title>Sneakers | coven. Streetwear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/sneakers.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- =========================================================
+       SHARED HEADER (Matched to COVEN Reference)
+       ========================================================= -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <div class="header-left">
+        <button
+          type="button"
+          class="mobile-menu-btn"
+          id="mobile-menu-btn"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <a href="../index.html" class="brand-logo" aria-label="coven. Home">coven.</a>
+      </div>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li>
+            <a href="../index.html" class="nav-link">HOME</a>
+          </li>
+          <li class="nav-item-dropdown">
+            <button
+              type="button"
+              class="nav-link nav-link--active nav-dropdown-toggle"
+              id="shop-dropdown-btn"
+              aria-expanded="false"
+              aria-controls="shop-dropdown-menu"
+            >
+              <span>SHOP</span>
+              <svg class="chevron-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M2.5 4.25L6 7.75L9.5 4.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+
+            <ul class="dropdown-menu" id="shop-dropdown-menu" hidden>
+              <li>
+                <a href="sneakers.html" class="dropdown-link dropdown-link--current" aria-current="page">
+                  Sneakers
+                </a>
+              </li>
+              <li>
+                <button type="button" class="dropdown-link dropdown-link--soon" data-coming-soon="Jackets & Outerwear">
+                  Jackets &amp; Outerwear <span class="soon-tag">Soon</span>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="dropdown-link dropdown-link--soon" data-coming-soon="Lower Wear">
+                  Lower Wear <span class="soon-tag">Soon</span>
+                </button>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#drop-story" class="nav-link" id="nav-about-link">ABOUT</a>
+          </li>
+          <li>
+            <button type="button" class="nav-link nav-link-btn" id="nav-contact-btn">CONTACT</button>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <span class="header-divider" aria-hidden="true"></span>
+
+        <button
+          type="button"
+          class="icon-btn"
+          id="header-search-btn"
+          aria-label="Search sneakers"
+          aria-expanded="false"
+          aria-controls="catalog-search-input"
+        >
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </button>
+
+        <button
+          type="button"
+          class="icon-btn"
+          id="header-account-btn"
+          aria-label="Member profile and size preference"
+        >
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="8.5" r="3.75" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M5 19.5C5.9 16.2 8.7 14.5 12 14.5C15.3 14.5 18.1 16.2 19 19.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </button>
+
+        <button
+          type="button"
+          class="icon-btn cart-btn"
+          id="header-cart-btn"
+          aria-label="Open shopping cart"
+          aria-controls="cart-drawer"
+          aria-expanded="false"
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M3 4.5H5.2L7.4 15.2H18.4L20.5 7.5H6.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="9.2" cy="18.7" r="1.35" stroke="currentColor" stroke-width="1.4"/>
+            <circle cx="17.2" cy="18.7" r="1.35" stroke="currentColor" stroke-width="1.4"/>
+          </svg>
+          <span class="cart-badge" id="cart-count-badge" aria-live="polite">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       MAIN SNEAKERS PAGE CONTENT
+       ========================================================= -->
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="sneakers-hero" aria-labelledby="page-heading">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">HOME</a>
+            <span aria-hidden="true">/</span>
+            <span>SHOP</span>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page">SNEAKERS</span>
+          </nav>
+
+          <p class="hero-eyebrow">DROP 01 &mdash; STREETWEAR FOOTWEAR</p>
+          <h1 id="page-heading" class="hero-title">COVEN Sneakers</h1>
+          <p class="hero-description">
+            Curated streetwear silhouettes and signature editions crafted in leather, suede, and technical mesh for everyday rotation.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#catalog-section" class="btn btn-primary">Explore Collection</a>
+            <button type="button" class="btn btn-outline" id="open-size-guide-btn">UK Size Guide</button>
+          </div>
+
+          <ul class="hero-highlights" aria-label="Collection highlights">
+            <li>8 Signature Silhouettes</li>
+            <li>UK 6 &ndash; UK 11 Sizing</li>
+            <li>Free Delivery Over Rs. 25,000</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-image-frame">
+            <img
+              src="../images/sneakers/hero-sneaker.png"
+              alt="COVEN Dark Wine and Ivory signature streetwear sneaker displayed on a blush cream stone plinth"
+              width="640"
+              height="460"
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Catalog Controls & Product Grid -->
+    <section class="catalog-section" id="catalog-section" aria-labelledby="catalog-heading">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 id="catalog-heading" class="section-title">All Sneakers</h2>
+            <p class="section-subtitle">
+              Select your UK size on any pair to add directly to your COVEN bag.
+            </p>
+          </div>
+          <p class="results-count" id="results-count" aria-live="polite">Showing 8 sneakers</p>
+        </div>
+
+        <!-- Search, Filter & Sort Toolbar -->
+        <div class="toolbar" role="region" aria-label="Search, filter, and sort sneakers">
+          <form class="search-form" id="search-form" novalidate>
+            <label for="catalog-search-input" class="visually-hidden">Search sneakers by name, category, or colorway</label>
+            <div class="search-input-wrap">
+              <svg class="search-field-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.7"/>
+                <path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+              </svg>
+              <input
+                type="search"
+                id="catalog-search-input"
+                name="query"
+                placeholder="Search sneakers (e.g. Jordan, CR7, Messi, Runners)..."
+                autocomplete="off"
+                maxlength="60"
+              >
+              <button type="button" class="clear-search-btn" id="clear-search-btn" aria-label="Clear search query" hidden>
+                Clear
+              </button>
+            </div>
+            <p class="input-feedback" id="search-feedback" aria-live="polite"></p>
+          </form>
+
+          <div class="filter-controls">
+            <div class="category-pills" role="group" aria-label="Filter by sneaker silhouette">
+              <button type="button" class="pill-btn pill-btn--active" data-category="All" aria-pressed="true">All</button>
+              <button type="button" class="pill-btn" data-category="Low-Top" aria-pressed="false">Low-Top</button>
+              <button type="button" class="pill-btn" data-category="High-Top" aria-pressed="false">High-Top</button>
+              <button type="button" class="pill-btn" data-category="Runners" aria-pressed="false">Runners</button>
+              <button type="button" class="pill-btn" data-category="Lifestyle / Retro Runner" aria-pressed="false">Lifestyle / Retro Runner</button>
+              <button type="button" class="pill-btn" data-category="Court" aria-pressed="false">Court</button>
+            </div>
+
+            <div class="select-group">
+              <div class="select-field">
+                <label for="size-filter">Size</label>
+                <select id="size-filter" name="size">
+                  <option value="All">All Sizes</option>
+                  <option value="6">UK 6</option>
+                  <option value="7">UK 7</option>
+                  <option value="8">UK 8</option>
+                  <option value="9">UK 9</option>
+                  <option value="10">UK 10</option>
+                  <option value="11">UK 11</option>
+                </select>
+              </div>
+
+              <div class="select-field">
+                <label for="sort-select">Sort by</label>
+                <select id="sort-select" name="sort">
+                  <option value="featured">Featured</option>
+                  <option value="price-asc">Price: Low to High</option>
+                  <option value="price-desc">Price: High to Low</option>
+                  <option value="name-asc">Name: A to Z</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Grid (Populated by JavaScript) -->
+        <div class="sneakers-grid" id="sneakers-grid" aria-label="Sneaker products"></div>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="empty-state" hidden>
+          <h3>No sneakers match your filters</h3>
+          <p id="empty-state-message">Try clearing your search keyword or switching to All Sizes.</p>
+          <button type="button" class="btn btn-primary" id="reset-filters-btn">Reset All Filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- About This Drop (Context for About Links) -->
+    <section class="drop-story" id="drop-story" aria-labelledby="drop-story-heading">
+      <div class="container">
+        <div class="story-header">
+          <p class="hero-eyebrow">CRAFT &amp; STANDARDS</p>
+          <h2 id="drop-story-heading" class="section-title">Built for the COVEN Standard</h2>
+        </div>
+        <div class="story-grid">
+          <article class="story-card">
+            <h3>Tonal Street Palette</h3>
+            <p>Every pair pairs Dark Wine, Cherry, Blush Cream, and Ivory materials to style cleanly across seasons.</p>
+          </article>
+          <article class="story-card">
+            <h3>Cushioned Everyday Wear</h3>
+            <p>Molded EVA midsoles and breathable linings keep long city walks effortless without sacrificing structure.</p>
+          </article>
+          <article class="story-card">
+            <h3>Transparent PKR Pricing</h3>
+            <p>Flat Rs. 350 nationwide courier across Pakistan, with complimentary shipping on orders above Rs. 25,000.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       SHARED FOOTER (Matched to COVEN Reference)
+       ========================================================= -->
+  <footer class="site-footer" id="site-footer">
+    <div class="footer-inner">
+      <a href="../index.html" class="footer-logo" aria-label="coven. Home">coven.</a>
+
+      <nav class="footer-links" aria-label="Footer navigation">
+        <button type="button" class="footer-link footer-link-btn" id="footer-contact-btn">CONTACT US</button>
+        <a href="#drop-story" class="footer-link">ABOUT US</a>
+      </nav>
+
+      <div class="footer-social" aria-label="Social media links">
+        <span class="follow-label">FOLLOW</span>
+        <button type="button" class="footer-link footer-link-btn" data-social="Instagram">INSTAGRAM</button>
+        <button type="button" class="footer-link footer-link-btn" data-social="Facebook">FACEBOOK</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+       CART SLIDE-OVER DRAWER
+       ========================================================= -->
+  <div class="backdrop" id="drawer-backdrop" hidden></div>
+
+  <aside
+    class="cart-drawer"
+    id="cart-drawer"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="cart-drawer-title"
+    hidden
+  >
+    <div class="drawer-header">
+      <h2 id="cart-drawer-title">Your COVEN Bag</h2>
+      <button type="button" class="close-btn" id="close-cart-btn" aria-label="Close shopping cart">&times;</button>
+    </div>
+
+    <div class="shipping-banner" id="shipping-banner" aria-live="polite">
+      Add Rs. 25,000 for complimentary nationwide delivery.
+    </div>
+
+    <div class="cart-items-wrap" id="cart-items-wrap">
+      <!-- Cart items injected by JS -->
+    </div>
+
+    <div class="cart-summary" id="cart-summary">
+      <div class="summary-row">
+        <span>Subtotal</span>
+        <strong id="cart-subtotal">Rs. 0</strong>
+      </div>
+      <div class="summary-row">
+        <span>Delivery</span>
+        <span id="cart-shipping">Rs. 0</span>
+      </div>
+      <div class="summary-row summary-row--total">
+        <span>Total</span>
+        <strong id="cart-total">Rs. 0</strong>
+      </div>
+
+      <div class="cart-actions">
+        <button type="button" class="btn btn-primary btn-full" id="open-checkout-btn">Proceed to Checkout</button>
+        <button type="button" class="btn btn-outline btn-full" id="clear-cart-btn">Clear Bag</button>
+      </div>
+
+      <!-- Simple Beginner-Friendly Checkout Form -->
+      <form class="checkout-form" id="checkout-form" hidden novalidate>
+        <h3>Express Order Details</h3>
+        <div class="form-field">
+          <label for="checkout-name">Full Name</label>
+          <input type="text" id="checkout-name" placeholder="e.g. Ali Raza" required>
+        </div>
+        <div class="form-field">
+          <label for="checkout-phone">Phone (Pakistan)</label>
+          <input type="tel" id="checkout-phone" placeholder="03XX-XXXXXXX" required>
+        </div>
+        <div class="form-field">
+          <label for="checkout-city">City &amp; Address</label>
+          <input type="text" id="checkout-city" placeholder="e.g. F-7 Markaz, Islamabad" required>
+        </div>
+        <p class="form-error" id="checkout-error" aria-live="polite"></p>
+        <div class="checkout-form-actions">
+          <button type="submit" class="btn btn-primary btn-full">Place Order</button>
+          <button type="button" class="btn btn-outline btn-full" id="cancel-checkout-btn">Back</button>
+        </div>
+      </form>
+    </div>
+  </aside>
+
+  <!-- =========================================================
+       QUICK-VIEW MODAL
+       ========================================================= -->
+  <div
+    class="modal"
+    id="quickview-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="qv-title"
+    hidden
+  >
+    <div class="modal-card modal-card--wide">
+      <button type="button" class="close-btn modal-close" id="close-quickview-btn" aria-label="Close product quick view">&times;</button>
+      <div class="qv-grid" id="qv-content">
+        <!-- Populated dynamically by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       SIZE GUIDE MODAL
+       ========================================================= -->
+  <div
+    class="modal"
+    id="size-guide-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="size-guide-title"
+    hidden
+  >
+    <div class="modal-card">
+      <button type="button" class="close-btn modal-close" data-close-modal="size-guide-modal" aria-label="Close size guide">&times;</button>
+      <h2 id="size-guide-title">COVEN Sneakers &mdash; UK Size Guide</h2>
+      <p class="modal-subtitle">True to size. If you are between sizes, we recommend sizing up for Runners and Chunky silhouettes.</p>
+      <table class="size-table">
+        <thead>
+          <tr>
+            <th>UK</th>
+            <th>EU</th>
+            <th>US Men</th>
+            <th>Foot Length (cm)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>6</td><td>40</td><td>7</td><td>25.0 cm</td></tr>
+          <tr><td>7</td><td>41</td><td>8</td><td>25.8 cm</td></tr>
+          <tr><td>8</td><td>42</td><td>9</td><td>26.7 cm</td></tr>
+          <tr><td>9</td><td>43</td><td>10</td><td>27.5 cm</td></tr>
+          <tr><td>10</td><td>44</td><td>11</td><td>28.3 cm</td></tr>
+          <tr><td>11</td><td>45</td><td>12</td><td>29.2 cm</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       CONTACT MODAL (Makes Header/Footer Contact Interactive)
+       ========================================================= -->
+  <div
+    class="modal"
+    id="contact-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="contact-modal-title"
+    hidden
+  >
+    <div class="modal-card">
+      <button type="button" class="close-btn modal-close" data-close-modal="contact-modal" aria-label="Close contact dialog">&times;</button>
+      <h2 id="contact-modal-title">Contact COVEN</h2>
+      <p class="modal-subtitle">Questions about sneaker sizing, restocks, or delivery across Pakistan?</p>
+      <form id="contact-form" class="simple-form" novalidate>
+        <div class="form-field">
+          <label for="contact-name">Name</label>
+          <input type="text" id="contact-name" placeholder="Your name" required>
+        </div>
+        <div class="form-field">
+          <label for="contact-email">Email</label>
+          <input type="email" id="contact-email" placeholder="you@example.com" required>
+        </div>
+        <div class="form-field">
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" rows="3" placeholder="Ask about a sneaker pair or size..." required></textarea>
+        </div>
+        <p class="form-error" id="contact-error" aria-live="polite"></p>
+        <button type="submit" class="btn btn-primary btn-full">Send Inquiry</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       ACCOUNT / SIZE PREFERENCE MODAL
+       ========================================================= -->
+  <div
+    class="modal"
+    id="account-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="account-modal-title"
+    hidden
+  >
+    <div class="modal-card">
+      <button type="button" class="close-btn modal-close" data-close-modal="account-modal" aria-label="Close member profile dialog">&times;</button>
+      <h2 id="account-modal-title">COVEN Member Preference</h2>
+      <p class="modal-subtitle">Save your preferred UK sneaker size for faster shopping on this browser.</p>
+      <form id="account-form" class="simple-form" novalidate>
+        <div class="form-field">
+          <label for="member-name">Member Name</label>
+          <input type="text" id="member-name" placeholder="e.g. Abdul Rafay" required>
+        </div>
+        <div class="form-field">
+          <label for="member-size">Preferred Sneaker Size</label>
+          <select id="member-size">
+            <option value="">Select preferred UK size</option>
+            <option value="6">UK 6</option>
+            <option value="7">UK 7</option>
+            <option value="8">UK 8</option>
+            <option value="9">UK 9</option>
+            <option value="10">UK 10</option>
+            <option value="11">UK 11</option>
+          </select>
+        </div>
+        <p class="form-error" id="account-error" aria-live="polite"></p>
+        <button type="submit" class="btn btn-primary btn-full">Save Preference</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Polite Toast Feedback -->
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="../js/sneakers.js"></script>
+</body>
+</html>
