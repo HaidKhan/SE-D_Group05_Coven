@@ -7,33 +7,141 @@
   background-color: var(--color-ivory);
 }
 
-/* Top Editorial Hero Image */
+/* Top Editorial Photo with Simple Border */
 .about-hero {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 2.5rem 2rem 0;
-}
-
-.about-hero-frame {
-  width: 100%;
-  overflow: hidden;
-  border-radius: 4px;
-  background-color: var(--color-dark-wine);
-  box-shadow: 0 14px 36px rgba(36, 20, 25, 0.1);
+  padding: 1.75rem 2rem;
 }
 
 .about-hero-image {
   width: 100%;
-  height: auto;
-  max-height: 460px;
+  height: clamp(260px, 46vw, 540px);
   object-fit: cover;
+  object-position: center 24%;
+  border: 2px solid var(--color-dark-wine);
+  border-radius: 2px;
+}
+
+/* Horizontal Continuous Running COVEN Banner */
+.brand-banner {
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--color-dark-wine);
+  color: var(--color-ivory);
+  padding: 0.65rem 0;
+}
+
+.brand-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: coven-marquee 22s linear infinite;
+  will-change: transform;
+}
+
+.brand-marquee-group {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding-right: 0.35rem;
+}
+
+.brand-marquee-item {
+  font-family: var(--font-serif);
+  font-size: clamp(1.35rem, 2.6vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.brand-marquee-sparkles {
+  font-size: clamp(0.85rem, 1.4vw, 1.1rem);
+  letter-spacing: 0.1em;
+  color: var(--color-rose-red);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+@keyframes coven-marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (hover: hover) {
+  .brand-banner:hover .brand-marquee-track {
+    animation-play-state: paused;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-marquee-track {
+    animation: none;
+  }
+}
+
+/* Horizontal Stylish SINCE 2026 Band */
+.since-banner {
+  width: 100%;
+  background: linear-gradient(90deg, #5c1f31 0%, var(--color-cherry) 50%, #5c1f31 100%);
+  color: var(--color-ivory);
+  padding: 0.75rem 1.5rem;
+  border-top: 1px solid rgba(233, 213, 204, 0.22);
+  border-bottom: 1px solid rgba(36, 20, 25, 0.2);
+}
+
+.since-banner-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.since-rule {
+  flex: 1;
+  max-width: 110px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-blush-cream), transparent);
+  opacity: 0.65;
+}
+
+.since-banner-text {
+  margin: 0;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  line-height: 1;
+}
+
+.since-word {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.25rem, 2.6vw, 1.85rem);
+  letter-spacing: 0.06em;
+  color: var(--color-blush-cream);
+}
+
+.since-year {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3.2vw, 2.3rem);
+  letter-spacing: 0.16em;
+  color: var(--color-ivory);
 }
 
 /* Our Story Content Section */
 .our-story-section {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 3.75rem 2rem 5rem;
+  padding: 4rem 2rem 5rem;
 }
 
 .story-container {
@@ -43,12 +151,12 @@
 }
 
 .story-title {
+  margin: 0 0 2rem;
   font-family: var(--font-serif);
   font-size: clamp(2.1rem, 4vw, 3rem);
   font-weight: 600;
   color: var(--color-dark-wine);
   letter-spacing: -0.01em;
-  margin-bottom: 1.5rem;
   position: relative;
   display: inline-block;
 }
@@ -62,11 +170,23 @@
   margin: 0.75rem auto 0;
 }
 
+.story-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+
 .story-paragraph {
+  margin: 0;
   font-size: 1.08rem;
   line-height: 1.85;
   color: #3a262c;
   text-align: center;
+}
+
+.story-closing {
+  font-weight: 600;
+  color: var(--color-cherry);
 }
 
 /* ==========================================================================
@@ -75,16 +195,32 @@
 
 @media (max-width: 768px) {
   .about-hero {
-    padding: 1.5rem 1.25rem 0;
+    padding: 1.25rem;
   }
 
-  .our-story-section {
-    padding: 2.5rem 1.25rem 3.5rem;
+  .about-hero-image {
+    height: clamp(220px, 60vw, 340px);
   }
 
-  .story-paragraph {
-    font-size: 1rem;
-    line-height: 1.75;
-    text-align: left;
+    .since-banner {
+      padding: 0.65rem 1.25rem;
+    }
+
+    .since-rule {
+      max-width: 48px;
+    }
+
+    .our-story-section {
+      padding: 2.75rem 1.25rem 3.5rem;
+    }
+
+    .story-paragraph {
+      font-size: 1rem;
+      line-height: 1.75;
+      text-align: left;
+    }
+
+    .story-closing {
+      text-align: center;
+    }
   }
-}
