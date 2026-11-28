@@ -136,14 +136,6 @@
   border-bottom-color: var(--color-cherry);
 }
 
-.account-student-id {
-  margin: 0.4rem 0 0;
-  font-size: 0.98rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  color: var(--color-cherry);
-}
-
 .account-divider {
   width: 100%;
   border: none;
