@@ -106,6 +106,18 @@ function initSignupForm() {
       return;
     }
 
+    saveUserSession(fullName, email);
     setAuthStatus(statusEl, "Account created! Welcome to Coven.", true);
+    window.setTimeout(() => {
+      window.location.href = "account.html";
+    }, 450);
   });
+}
+
+function saveUserSession(name, email) {
+  try {
+    localStorage.setItem("coven_user", JSON.stringify({ name, email }));
+  } catch {
+    // Ignore storage failures in restricted contexts
+  }
 }

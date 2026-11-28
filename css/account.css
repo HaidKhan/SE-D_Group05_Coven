@@ -1,0 +1,260 @@
+/* ==========================================================================
+   Coven Streetwear — My Account Page Styles
+   Uses palette & design tokens defined in css/style.css
+   ========================================================================== */
+
+.account-main {
+  flex: 1;
+  background-color: var(--color-ivory);
+  display: flex;
+  align-items: stretch;
+}
+
+.account-layout {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: calc(100vh - 156px);
+}
+
+/* ==========================================================================
+   Left Column — Account Sidebar Navigation
+   ========================================================================== */
+
+.account-sidebar {
+  padding: 2.75rem 1.75rem;
+  border-right: 1px solid rgba(36, 20, 25, 0.18);
+  background-color: var(--color-ivory);
+}
+
+.account-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.account-nav-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.85rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--color-dark-wine);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.account-nav-btn svg {
+  color: var(--color-cherry);
+  flex-shrink: 0;
+  transition: color var(--transition-fast);
+}
+
+.account-nav-btn:hover {
+  background-color: rgba(233, 213, 204, 0.55);
+  color: var(--color-cherry);
+}
+
+.account-nav-btn.is-active {
+  background-color: var(--color-blush-cream);
+  color: var(--color-dark-wine);
+  font-weight: 600;
+}
+
+.account-nav-btn.logout-btn {
+  margin-top: 0.75rem;
+  color: var(--color-cherry);
+}
+
+.account-nav-btn.logout-btn:hover {
+  background-color: rgba(182, 77, 97, 0.12);
+  color: var(--color-dark-wine);
+}
+
+/* ==========================================================================
+   Right Column — Profile Info & Order Status
+   ========================================================================== */
+
+.account-content {
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem 3rem 3rem;
+}
+
+.account-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0.5rem 0 2.25rem;
+}
+
+.account-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background-color: var(--color-blush-cream);
+  border: 2px solid var(--color-dark-wine);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-dark-wine);
+  margin-bottom: 1.15rem;
+  box-shadow: 0 8px 22px rgba(36, 20, 25, 0.08);
+}
+
+.account-name {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(1.65rem, 2.6vw, 2.15rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-dark-wine);
+}
+
+.account-name-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.account-name-link:hover {
+  color: var(--color-cherry);
+  border-bottom-color: var(--color-cherry);
+}
+
+.account-student-id {
+  margin: 0.4rem 0 0;
+  font-size: 0.98rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--color-cherry);
+}
+
+.account-divider {
+  width: 100%;
+  border: none;
+  border-top: 1px solid rgba(36, 20, 25, 0.22);
+  margin: 0;
+}
+
+/* ==========================================================================
+   Lower Order Section
+   ========================================================================== */
+
+.account-section-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+}
+
+.account-panel[hidden] {
+  display: none;
+}
+
+.account-section-title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--color-dark-wine);
+}
+
+.order-empty-state {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2.75rem 1rem 1.25rem;
+  gap: 1rem;
+}
+
+.order-box-icon {
+  color: var(--color-cherry);
+  opacity: 0.9;
+}
+
+.order-empty-text {
+  margin: 0;
+  font-size: 1.08rem;
+  font-weight: 500;
+  color: var(--color-dark-wine);
+}
+
+.start-shopping-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.35rem;
+  padding: 0.85rem 2.25rem;
+  border-radius: 999px;
+  background-color: var(--color-dark-wine);
+  color: var(--color-ivory);
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.start-shopping-btn:hover {
+  background-color: var(--color-cherry);
+}
+
+.start-shopping-btn:active {
+  transform: translateY(1px);
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+@media (max-width: 860px) {
+  .account-layout {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .account-sidebar {
+    padding: 1.25rem;
+    border-right: none;
+    border-bottom: 1px solid rgba(36, 20, 25, 0.16);
+  }
+
+  .account-nav-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .account-nav-btn {
+    width: auto;
+    padding: 0.6rem 0.9rem;
+    font-size: 0.9rem;
+  }
+
+  .account-nav-btn.logout-btn {
+    margin-top: 0;
+  }
+
+  .account-content {
+    padding: 2rem 1.25rem 2.5rem;
+  }
+}
